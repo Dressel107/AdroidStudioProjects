@@ -6,7 +6,9 @@
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/drawable/green1button.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/drawable/green2button.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/drawable/normalbutton.xml" value="0.5708333333333333" />
+        <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/drawable/pointsbutton.xml" value="0.5708333333333333" />
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/layout/activity_change_player_name.xml" value="0.5546875" />
+        <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/layout/activity_chose_points.xml" value="0.5546875" />
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/layout/activity_main.xml" value="0.5546875" />
         <entry key="..\:/Users/Dirk Dresselhaus/Documents/AndroidStudioProjects/GolfScoreboard/app/src/main/res/layout/activity_splash.xml" value="0.5546875" />
       </map>

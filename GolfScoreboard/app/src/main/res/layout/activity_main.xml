@@ -76,8 +76,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button7"
@@ -85,8 +85,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button8"
@@ -94,8 +94,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button9"
@@ -113,8 +113,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button11"
@@ -122,8 +122,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button12"
@@ -131,8 +131,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button13"
@@ -150,8 +150,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button15"
@@ -159,8 +159,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button16"
@@ -168,8 +168,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button17"
@@ -187,8 +187,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button19"
@@ -196,8 +196,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button20"
@@ -205,8 +205,8 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button21"
@@ -219,13 +219,22 @@
             android:textColor="@color/white"
             />
         <android.widget.Button
+            android:id="@+id/button22"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/normalbutton"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
+            />
+        <android.widget.Button
             android:id="@+id/button23"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button24"
@@ -233,20 +242,11 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button25"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
-            />
-        <android.widget.Button
-            android:id="@+id/button26"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -256,13 +256,22 @@
             android:textColor="@color/white"
             />
         <android.widget.Button
+            android:id="@+id/button26"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/normalbutton"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
+            />
+        <android.widget.Button
             android:id="@+id/button27"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button28"
@@ -270,20 +279,11 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button29"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
-            />
-        <android.widget.Button
-            android:id="@+id/button30"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -293,13 +293,22 @@
             android:textColor="@color/white"
             />
         <android.widget.Button
+            android:id="@+id/button30"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/normalbutton"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
+            />
+        <android.widget.Button
             android:id="@+id/button31"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button32"
@@ -307,20 +316,11 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button33"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
-            />
-        <android.widget.Button
-            android:id="@+id/button34"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -330,13 +330,22 @@
             android:textColor="@color/white"
             />
         <android.widget.Button
+            android:id="@+id/button34"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/normalbutton"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
+            />
+        <android.widget.Button
             android:id="@+id/button35"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button36"
@@ -344,20 +353,11 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
             android:id="@+id/button37"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
-            />
-        <android.widget.Button
-            android:id="@+id/button38"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -367,34 +367,34 @@
             android:textColor="@color/white"
             />
         <android.widget.Button
-            android:id="@+id/button42"
+            android:id="@+id/button38"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button43"
+            android:id="@+id/button39"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button44"
+            android:id="@+id/button40"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button45"
+            android:id="@+id/button41"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -403,31 +403,31 @@
             android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button46"
+            android:id="@+id/button42"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button47"
+            android:id="@+id/button43"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
         <android.widget.Button
-            android:id="@+id/button48"
+            android:id="@+id/button44"
             android:layout_gravity="fill"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/normalbutton"
-            android:text="Button"
-            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textColor="@color/black90"
             />
 
 
