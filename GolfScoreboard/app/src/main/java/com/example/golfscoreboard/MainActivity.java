@@ -10,13 +10,17 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -25,16 +29,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TableLayout tableLayout;
-    TableRow tableRow;
-
-
-
-    Button btn1, btn2, btn3, btn4, btn6, btn7, btn8, btn10, btn11, btn12, btn14, btn15, btn16, btn18, btn19, btn20,
-            btn22, btn23, btn24, btn26, btn27, btn28, btn30, btn31, btn32, btn34, btn35, btn36, btn38, btn39, btn40;
 
     Button currentBtn;
-    int numberRows;
-    int numberColumn;
+
 
 
     ActivityResultLauncher<Intent> startForPlayerName = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -65,14 +62,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+
+
         Intent intent = getIntent();
+
         int anzahlSpieler = Integer.parseInt(intent.getStringExtra("anzahlSpieler"));
         int anzahlLöcher = Integer.parseInt(intent.getStringExtra("anzahlLöcher"));
+        String platzName = intent.getStringExtra("platzname");
 
-        this.tableLayout = createTable(anzahlLöcher,anzahlSpieler);
+        this.tableLayout = createTable(anzahlLöcher,anzahlSpieler, platzName);
 
 
         setContentView(tableLayout);
+
 
     }
 
@@ -92,15 +95,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startForPoints.launch(intent);
     }
 
-    private void sumPoints(int player){
 
+    private void restartGame(){
+        Intent intent = new Intent(this, Start.class);
+        startActivity(intent);
     }
 
-    private TableLayout createTable(int holeNo, int playerNo){
+    private TableLayout createTable(int holeNo, int playerNo, String platzName){
         TableLayout mainTable = new TableLayout(this);
         mainTable.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
 
+        TableRow toolbar = new TableRow(this);
+        toolbar.setBackgroundColor(Color.GRAY);
+        toolbar.setPadding(15,15,15,15);
 
+
+
+        TextView spielname = new TextView(this);
+        spielname.setText(platzName);
+        spielname.setTextColor(Color.WHITE);
+        spielname.setTextSize(25);
+        toolbar.addView(spielname);
+
+        ImageView refresh = new ImageView(this);
+        refresh.setBackgroundResource(R.drawable.ic_baseline_refresh_24);
+        refresh.setScaleX(0.4F);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                restartGame();
+            }
+        });
+
+        toolbar.addView(refresh);
+
+
+        mainTable.addView(toolbar);
 
         TableRow header = new TableRow(this);
 
@@ -113,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i = 0; i < playerNo; i++){
             Button btn = new Button(this);
             btn.setBackgroundResource(R.drawable.green2button);
-            btn.setText("Spieler " + (i + 1));
+            btn.setText("Sp" + (i + 1));
             btn.setTextColor(Color.WHITE);
             header.addView(btn);
             btn.setOnClickListener(new View.OnClickListener() {

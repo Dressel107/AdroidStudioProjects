@@ -26,13 +26,16 @@ public class Start extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         EditText editText1 = findViewById(R.id.anzahlspieler);
         EditText editText2 = findViewById(R.id.anzahllöcher);
+        EditText editText3 = findViewById(R.id.platzname);
 
         String inputNuPlayer = editText1.getText().toString();
         String inputNuHoles = editText2.getText().toString();
+        String platzname = editText3.getText().toString();
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("anzahlSpieler", inputNuPlayer);
         intent.putExtra("anzahlLöcher", inputNuHoles);
+        intent.putExtra("platzname", platzname);
 
         startActivity(intent);
     }
