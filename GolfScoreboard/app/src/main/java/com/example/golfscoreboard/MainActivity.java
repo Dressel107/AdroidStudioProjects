@@ -26,13 +26,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     TableLayout tableLayout;
-
     Button currentBtn;
-
-
+    int [] points;
+    ArrayList<Button> totalButtons;
 
     ActivityResultLauncher<Intent> startForPlayerName = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(result != null && result.getResultCode() == RESULT_OK){
                 if(result.getData() != null){
                     currentBtn.setText(result.getData().getStringExtra("newName"));
-                    //int test  = Integer.parseInt(currentBtn.getText().toString()) ;
                 }
             }
         }
@@ -51,38 +50,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onActivityResult(ActivityResult result) {
             if(result != null && result.getResultCode() == RESULT_OK){
                 if(result.getData() != null){
-                    currentBtn.setText(result.getData().getStringExtra("points"));
+                    String pointsResult = result.getData().getStringExtra("points");
+                    currentBtn.setText(pointsResult);
+
+                    int tag =  Integer.parseInt(currentBtn.getTag().toString());
+                    int pointsPlayer = Integer.parseInt(pointsResult);
+                    points[tag] += pointsPlayer;
+                    System.out.println(points[tag]);
 
                 }
             }
         }
     });
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
 
-
         Intent intent = getIntent();
-
         int anzahlSpieler = Integer.parseInt(intent.getStringExtra("anzahlSpieler"));
         int anzahlLöcher = Integer.parseInt(intent.getStringExtra("anzahlLöcher"));
         String platzName = intent.getStringExtra("platzname");
 
+        this.points = new int[anzahlSpieler];
+        this.totalButtons = new ArrayList<Button>();
+
         this.tableLayout = createTable(anzahlLöcher,anzahlSpieler, platzName);
-
-
         setContentView(tableLayout);
-
-
     }
-
 
     @Override
     public void onClick(View v) {
-
     }
 
     private void getResultPlayerName(){
@@ -95,13 +94,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startForPoints.launch(intent);
     }
 
-
     private void restartGame(){
         Intent intent = new Intent(this, Start.class);
         startActivity(intent);
     }
 
+    private void getTotal(){
+        for(int i = 0; i < this.points.length ; i++){
+            String tmp = Integer.toString(this.points[i]);
+            this.totalButtons.get(i).setText(tmp);
+        }
+    }
+
     private TableLayout createTable(int holeNo, int playerNo, String platzName){
+
         TableLayout mainTable = new TableLayout(this);
         mainTable.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
 
@@ -110,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar.setPadding(15,15,15,15);
 
 
-
+        //Create Actionbar
         TextView spielname = new TextView(this);
         spielname.setText(platzName);
         spielname.setTextColor(Color.WHITE);
@@ -128,10 +134,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         toolbar.addView(refresh);
-
-
         mainTable.addView(toolbar);
 
+
+        // Create table-header
         TableRow header = new TableRow(this);
 
         Button btn0 = new Button(this);
@@ -157,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         mainTable.addView(header);
 
+
+        //Create table-body
         for(int i = 0; i < holeNo; i++){
             TableRow row = new TableRow(this);
             Button btn = new Button(this);
@@ -165,32 +173,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btn.setTextColor(Color.WHITE);
             row.addView(btn);
 
-
-            for (int j = 1; j <= playerNo; j++){
+            for (int j = 0; j < playerNo; j++){
                 Button btn1 = new Button(this);
                 btn1.setBackgroundResource(R.drawable.normalbutton);
                 btn1.setText("");
                 btn1.setTextColor(Color.BLACK);
+                btn1.setTag(j);
                 row.addView(btn1);
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         currentBtn = (Button) v;
                         getResultHolePoints();
-
                     }
                 });
                 TableLayout.LayoutParams rowParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT, 1f);
+                //TableRow.LayoutParams rowParams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.MATCH_PARENT);
                 row.setLayoutParams(rowParams);
             }
             mainTable.addView(row);
         }
 
+
+        //Create table-footer
         TableRow footer = new TableRow(this);
         Button btnfooter = new Button(this);
         btnfooter.setBackgroundResource(R.drawable.green2button);
         btnfooter.setText("Total");
         btnfooter.setTextColor(Color.WHITE);
+        btnfooter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTotal();
+            }
+        });
         footer.addView(btnfooter);
 
         for(int i = 0; i < playerNo; i++){
@@ -198,14 +214,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btn.setBackgroundResource(R.drawable.green2button);
             btn.setText("");
             btn.setTextColor(Color.WHITE);
+            this.totalButtons.add(btn);
             footer.addView(btn);
         }
         mainTable.addView(footer);
 
         mainTable.setStretchAllColumns(true);
         mainTable.setShrinkAllColumns(true);
-
-
         return mainTable;
     }
 
